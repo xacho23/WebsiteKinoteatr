@@ -1,0 +1,15 @@
+{
+    "name": "xacho/localhost",
+    "description": "A brief description of your project",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "endroid/qr-code": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xacho\\Localhost\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

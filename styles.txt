@@ -1,0 +1,1188 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}
+body {
+	background-color: #333;
+}
+
+.fon2 {
+	margin-top:20px;
+	background-color: rgba(20, 20, 20, 0.7);
+	height:345px;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333;
+    color: white;
+}
+
+@font-face {
+	font-family: 'slider'; 
+	src: url(ofont.ru_Cruinn.ttf); 
+}
+
+.logo {
+    width: 400px; /* Ширина вашего логотипа */
+    height: 100px; /* Высота вашего логотипа */
+    background-image: url('aaa.png'); /* Путь к изображению */
+    background-size: cover; /* или contain, в зависимости от того, как вы хотите отобразить изображение */
+    background-position: center; 
+}
+
+.navigation .nav-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    margin-right: 40px;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ff0000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+.special-link::before {
+    display: none; /* Убираем подчеркивание у специальных ссылок */
+}
+.special-link {
+    padding: 10px 20px;
+    border: 2px solid #ff0000;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.special-link:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+/* Дополнительно: если хотите, чтобы кнопки были чуть правее остальных ссылок */
+.navigation .special-link {
+    margin-left: auto; /* Отделяет кнопки Вход и Регистрация от остальных ссылок */
+}
+
+.slider {
+  width: 100%;
+  height: 50vh; /* половина высоты экрана */
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100vw;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.slide-container {
+  width: 100%; /* Ширина контейнера, которая составляет треть ширины слайдера */
+  float: left; /* Выравнивание контейнера к левому краю */
+  background-color: rgba(0, 0, 0, 0.6); /* Фон контейнера *//* Закругление углов фона */
+}
+
+
+.slide-text {	
+  color: white;
+  font-size: 2em;
+font-weight: 500;
+  padding: 10px;
+  font-family: 'slider', sans-serif;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Добавление тени */
+  text-align: center; /* Выравнивание текста по левому краю */
+}
+
+.slide-fade {
+  animation-name: fade;
+  animation-duration: 7s;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0; } /* Начало и конец анимации, элемент полностью прозрачен */
+  20% { opacity: 1; } /* После 10% времени анимации элемент становится полностью видимым */
+  80% { opacity: 1; } 
+  100%{opacity: 0;}/* До 90% времени анимации элемент остается видимым */
+  /* После 90% времени анимации начинается плавное исчезновение до конца анимации */
+}
+
+/* Скрываем все слайды по умолчанию, чтобы показывать их только через JavaScript */
+.slide {
+  display: none;
+}
+
+
+@keyframes slideInDown {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.promo-block {
+	
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  left: 4.5%;
+  width: 1100px;
+  height: 300px;
+  color: #333;
+  padding: 0px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Красная рамка */
+  background-image: url('bar.png'); /* Путь к изображению */  
+ background-color: rgba(30, 30, 30, 0.7);
+  animation: slideInDown 1s ease-out forwards; /* Анимация появления */
+  opacity: 0; /* Начальное состояние для анимации */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Добавление тени */
+}
+
+
+.promo-block2 {
+	
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  left: 4.5%;
+  width: 1100px;
+  height: 300px;
+  color: #333;
+  padding: 0px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Красная рамка */
+  background-image: url('bgdiv2.png'); /* Путь к изображению */
+    background-size: cover; /* или contain, в зависимости от того, как вы хотите отобразить изображение */  
+ background-color: rgba(30, 30, 30, 0.7);
+  animation: slideInDown 1s ease-out forwards; /* Анимация появления */
+  opacity: 0; /* Начальное состояние для анимации */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Добавление тени */
+}
+
+.promo-block3 {
+	
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  left: 4.5%;
+  width: 1100px;
+  height: 300px;
+  color: #333;
+  padding: 0px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Красная рамка */
+  background-image: url('vipbg.png'); /* Путь к изображению */
+    background-size: cover; /* или contain, в зависимости от того, как вы хотите отобразить изображение */  
+ background-color: rgba(30, 30, 30, 0.7);
+  animation: slideInDown 1s ease-out forwards; /* Анимация появления */
+  opacity: 0; /* Начальное состояние для анимации */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Добавление тени */
+}
+
+.promo-blockbl {
+  display: flex;
+  color: #333;
+    border-radius: 10px;
+  padding: 20px;
+ background-color: rgba(30, 30, 30, 0.7);
+
+}
+
+.promo-text {
+  flex: 1;
+  padding-right: 20px;
+  color: white;
+}
+
+.promo-text h2 {
+  color: white;
+}
+
+.promo-text p {
+  margin-bottom: 10px;
+}
+
+.promo-text button {
+margin-top:10px;
+margin-bottom:1px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Красная рамка */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.promo-text button:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.promo-image {
+  flex: 1;
+  text-align: right;
+  
+}
+
+.promo-image2 {
+  flex: 1;
+  text-align: right;
+  
+}
+
+.promo-image img {
+margin-top:-20px;
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+}
+
+.promo-image2 img {
+margin-top:-20px;
+margin-right: 500px;
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+}
+
+.promo-text2 {
+  flex: 1;
+  padding-right: 20px;
+
+  color: white;
+}
+.promo-text2 button:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.promo-text2 h2 {
+  color: white;
+}
+
+.promo-text2 p {
+  margin-bottom: 10px;
+}
+
+.promo-text2 button {
+margin-top:10px;
+margin-bottom:1px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Красная рамка */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+.pricing-container {
+display: flex;
+justify-content: space-around;
+padding: 20px;
+}
+
+.price-block {
+border: 1px solid red;
+width: 200px;
+height: 300px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.7); /* Добавление тени */
+}
+
+.price-header {
+    margin-top: 40px;    
+    margin-bottom: 20px;
+	font-family: 'slider';
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    position: relative; /* Необходимо для позиционирования ::after */
+}
+
+.price-header::after {
+    content: " ";
+    position: absolute;
+	margin-left:-230px;
+	width: 240px;
+    bottom: -10px; /* Регулируйте отступ подчеркивания */
+    height: 3px; /* Толщина линии подчеркивания */
+    background-color: red; /* Цвет линии */
+    border-radius: 10px; /* Делает края линии скругленными для более мягкого вида */
+}
+
+
+.price {
+font-family: 'slider';	
+font-size: 35px;
+font-weight: bold;
+color: white;
+}
+.price2 {
+margin-top:10px;
+margin-bottom:10px;	
+margin-left:-20px;
+font-family: 'slider';	
+font-size: 15px;
+color: white;
+}
+.price3 {	
+font-size: 35px;
+font-weight: bold;
+color: white;
+}
+
+
+.fon3 {
+	margin-top:20px;
+	padding-top:10px;
+	background-color: rgba(20, 20, 20, 0.7);
+	height:600px;
+}
+
+.fon3 p {
+	position:relative;
+	margin-top:20px;
+	color:grey;
+	font-size:15px;
+	text-align: center;
+}
+
+.glow-on-hover {
+	position:relative;
+	margin-top:10px;
+	margin-bottom:1px;
+	color: white;
+	left:41%;
+	padding: 10px 20px;
+	font-size: 16px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    z-index: 0;
+	border: 2px solid rgba(255, 0, 0, 0.7); /* Красная рамка */
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+.site-footer {
+  background-color: #26272b;
+  color: white;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.footer-container > div {
+  flex: 1;
+}
+
+.footer-about,
+.footer-contact {
+	margin-left:30px;
+margin-right:50px;
+  max-width: 500px;
+}
+
+
+.footer-social {
+	text-align:center;
+  display: inline-block;
+  margin-right: 10px;
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.site-footer h3 {
+  margin-bottom: 20px;
+}
+
+.site-footer p, a {
+  font-size: 16px;
+  color: grey;
+}
+
+
+
+
+
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(30,30,30,0.95);
+  margin: auto;
+  border: 1px solid red;
+  width: 80%;
+  border-radius:20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+}
+
+.modal-content img {
+	height:auto;
+	width:100%;
+	border-radius:20px;
+	margin-bottom:-3px;
+}
+
+.modal-content h2 {
+	margin:20px;
+	color:white;
+	font-family: "slider";
+	text-align: center;
+}
+
+.modal-content h3 {
+	margin:20px;
+	color:white;
+	font-family: "slider";
+	text-align: center;		
+}
+.modal-content p {
+	margin:20px;
+	color:white;
+	width:90%;
+	margin-left:45px;
+}
+
+.modal-content ul {
+	margin:20px;
+	color:white;
+}
+
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin:10px;
+  margin-right:20px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes slideIn {
+  from {top: -300px; opacity: 0}
+  to {top: 50%; opacity: 1}
+}
+
+.halls_ramka{
+  border:2px solid rgba(255, 0, 0, 0.6);
+  border-radius: 20px;
+  position: relative;
+  height: auto;
+  z-index: 999;
+  background-image: url("fon4.jpg");
+  margin:20px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+.halls_ramka2{
+  border:2px solid rgba(255, 0, 0, 0.6);
+  border-radius: 20px;
+  position: relative;
+  height: auto;
+  z-index: 999;
+  background-image: url("fonabout.png");
+  background-size: cover;
+  margin:20px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.halls_ramkabl{
+  border-radius: 20px;
+  position: relative;
+  height: auto;
+  z-index: 999;
+  background-color: rgba(30, 30, 30, 0.7);
+  padding:30px;
+}
+
+.fon4 {
+	margin-top:20px;
+	background-color: rgba(20, 20, 20, 0.7);
+	height:auto;
+	padding-top:1px;
+	padding-bottom:1px;
+  z-index: -1;
+}
+
+.halls_ramkabl h2{
+  text-align: center;
+  font-family: 'slider';
+  color: white;
+  font-size:35px;
+  margin-top: 0px;
+}
+
+.halls_ramkabl h3{
+  text-align: center;
+  font-family: 'slider';
+  color: white;
+  font-size:35px;
+}
+.halls_ramkabl p{
+  text-align: center;
+  font-family: 'slider';
+  color: white;
+  font-size:22px;
+}
+
+.halls_ramkabl ul{
+
+  font-family: 'slider';
+  color: white;
+  font-size:22px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image {
+  margin: 5px;
+  width: 350px; /* Или другой подходящий размер */
+  height: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.halls_ramkablabout{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  border-radius: 20px;
+  position: relative;
+  height: auto;
+  z-index: 999;
+  background-color: rgba(30, 30, 30, 0.9);
+  padding:30px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.halls_ramkablabout p{
+  position: relative;
+  text-align: left;
+  font-size: 22px;
+  font-family: "slider";
+  color: white;
+  margin: 20px;
+}
+
+
+.halls_ramkablabout h3{
+  position: relative;
+  text-align: left;
+  font-size: 30px;
+  font-family: "slider";
+  color: white;
+  margin: 20px;
+}
+
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+
+
+
+.signin .content .form .inputBox input[type="submit"]
+{
+  margin-top: 20px;
+  padding: 10px;
+  color: #ffffff;
+  border: 2px solid red;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "slider";
+  background-color: rgba(20, 20, 20, 0.7);
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+
+
+.signin
+{
+  margin: 50px;
+  margin-left: 30%;
+  position: relative;
+  width: 400px;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+
+
+.signin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.signin .content h2 
+{
+  margin-top: -10px;
+  margin-bottom: -30px;
+  font-family: "slider";
+  font-size: 2em;
+  color: rgb(255, 0, 0);
+  text-transform: uppercase;
+}
+.signin .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.signin .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+.signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 97%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.35em;
+}
+.signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.movie {
+  display: flex;
+  border: 1px solid rgba(255, 0, 0, 0.7);
+  border-radius: 20px;
+  background-image: url("raspfon.jpg");
+  background-size: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  margin-left: 150px;
+  margin-top: 30px;
+  width: 850px;
+}
+
+.moviebl {
+  display: flex;
+  border-radius: 20px;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 20px;
+}
+
+.movie img {
+  flex:1;
+  width: 100%;
+  width: 200px;
+  height: auto;
+  display: block;
+  text-align: left;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+  margin-right: 20px;
+}
+
+.movie h2 {
+  color:white;
+  margin: 0 0 10px;
+}
+.movie p {
+  color: white;
+  line-height: 1.6;
+}
+.sessions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.session {
+  border: 1px solid rgba(255, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+  background-color: rgba(30, 30, 30, 0.8);
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  width: 150px;
+  text-decoration: none;
+}
+
+.session:hover {
+background-color: rgba(255, 0, 0, 0.6);
+}
+.session p {
+  margin: 5px 0;
+}
+
+
+
+
+.moviebig {
+  border: 1px solid rgba(255, 0, 0, 0.7);
+  border-radius: 20px;
+  background-image: url("raspfon.jpg");
+  background-size: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 1000px;
+  height: auto;
+}
+
+.moviebig img {
+  display: block;
+  width: 100%;
+  width: 400px;
+  height: auto;
+  display: block;
+  text-align: left;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+  margin-right: 20px;
+}
+
+.moviebig h2 {
+  display: block;
+  color:white;
+  text-align: center;
+  font-size: 48px;
+  font-family: "slider";
+}
+
+
+.movietitle {
+  display: block;
+  color: white;
+  line-height: 1.6;
+}
+
+
+.movieposterandtext {
+  display: flex;
+  flex-direction: row;
+}
+.moviebigses {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin-left: 25px;
+}
+
+.moviebigses p {
+  color: white;
+}
+.moviebigbl {
+  border-radius: 20px;
+  background-color: rgba(30, 30, 30, 0.9);
+  padding: 20px;
+}
+
+.genre {
+text-align: center;
+margin-top: -40px;
+}
+
+.desc {
+  font-size: 20px;
+  font-family: "slider";
+  }
+
+
+
+  .seat {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.seat.booked {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: green;
+}
+
+
+
+
+
+
+#hallScheme {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row-number {
+  font-family: 'slider';
+  padding-right: 20px;
+  color: white;
+}
+
+.seats {
+  display: flex;
+  gap: 5px;
+}
+
+.seat {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 20px;
+  color: white;
+  font-family: 'slider';
+  width: 10px;
+  height: 15px;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+.seat.booked {
+  background-color: rgba(255, 0, 0, 0.7);
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #4CAF50;
+}
+
+/* Отключаем кнопку бронирования по умолчанию */
+#reserveButton[disabled] {
+  position: relative;
+  margin-top: 20px;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 0, 0, 0.6);
+  cursor: not-allowed;
+  opacity: 0.5;
+  padding: 10px;
+  color: white;
+  width:100%;
+}
+
+#reserveButton{
+  margin-top: 20px;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 0, 0, 0.6);
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  width:100%;
+}
+
+.zakaz{
+  margin: 30px;
+  background-image: url('zakazfon.jpg');
+  background-size: cover;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 0, 0, 0.7);
+}
+
+.zakazbl{
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  border-radius: 20px;
+background-color: rgba(30, 30, 30, 0.8);
+}
+
+.curved-underline {
+  height: 5px;
+  margin-right: -20%;
+  width: 80%; /* Ширина подчеркивания меньше, чтобы создать эффект изгиба */
+  background-color: white; /* Цвет подчеркивания */
+  margin: 0 auto; /* Центрируем подчеркивание под заголовком */
+  border-radius: 1000px / 100%; /* Создаем изогнутый эффект с помощью радиуса границы */
+  transform: scaleX(1.2); /* Растягиваем подчеркивание по горизонтали для усиления эффекта изгиба */
+  margin-top: -20px;
+}
+
+.profilebox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+}
+
+
+
+/* Стиль модального окна */
+.modal4 {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если необходимо */
+  background-color: rgb(0,0,0); /* Цвет фона */
+  background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+  padding-top: 60px;
+}
+
+/* Стиль содержимого модального окна */
+.modal-content4 {
+   background-color: rgba(30, 30, 30, 0.9);
+   margin: 5% auto; /* 5% сверху и отцентрировано по горизонтали */
+   padding: 20px;
+   border: 1px solid rgba(255, 0, 0, 0.6);
+   text-align: center;
+  color: white;
+   width: 80%; /* Можно адаптировать под нужный размер */
+   border-radius: 20px;
+   line-height: 3em;
+}
+
+/* Кнопка закрытия */
+.close4 {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+}
+
+.close4:hover,
+.close4:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.alert{
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  margin-top:60px;
+}
+
+.closeSession {
+  margin:10px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeSession:hover,
+.closeSession:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.adminbutton{
+  text-align:center; 
+  display: inline;
+  margin-left: 30px; 
+  margin-top:60px; 
+  color:white; 
+  border: 2px solid white; 
+  border-radius: 20px; 
+  padding: 15px; 
+  text-decoration:none; 
+  cursor:pointer; 
+  background-color: rgba(30, 30, 30, 0.7)
+}
